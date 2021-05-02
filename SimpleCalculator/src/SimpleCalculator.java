@@ -1,21 +1,19 @@
 public class SimpleCalculator {
-    static double firstNumber;
-    static double secondNumber;
-    public static double getFirstNumber() {
+    private double firstNumber;
+    private double secondNumber;
+    public double getFirstNumber() {
         return firstNumber;
     }
-    public static double getSecondNumber() {
+    public double getSecondNumber() {
         return secondNumber;
     }
-    public double setFirstNumber(double num) {
-        firstNumber = num;
-        return firstNumber;
+    public void setFirstNumber(double num) {
+        this.firstNumber = num;
     }
-    public double setSecondNumber(double num) {
-        secondNumber = num;
-        return secondNumber;
+    public void setSecondNumber(double num) {
+        this.secondNumber = num;
     }
-    public double getAdditonResult() {
+    public double getAdditionResult() {
         return firstNumber + secondNumber;
     }
     public double getSubtractionResult() {
