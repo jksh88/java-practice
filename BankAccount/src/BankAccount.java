@@ -1,14 +1,26 @@
 public class BankAccount {
-        private int accountNo;
+        private long accountNo;
         private int balance;
         private String customerName;
         private String email;
         private String phoneNo;
 
-        public int getAccountNo() {
+        public BankAccount(){
+            System.out.println("inside constructor");
+        }
+
+        public BankAccount(long accountNo, int balance, String customerName, String email, String phoneNo) {
+            this.accountNo = accountNo;
+            this.balance = balance;
+            this.customerName = customerName;
+            this.email = email;
+            this.phoneNo = phoneNo;
+        }
+
+        public long getAccountNo() {
             return accountNo;
         }
-        public void setAccountNo(int accountNo){
+        public void setAccountNo(long accountNo){
             this.accountNo = accountNo;
         }
         public int getBalance() {
