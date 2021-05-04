@@ -9,6 +9,7 @@ public class Main {
         System.out.println(myComputer.getTheCase());
         myComputer.getMonitor().drawPixelAt(800, 300, "green");
         myComputer.getMotherBoard().loadProgram("Docker");
+        myComputer.getMonitor();
         myComputer.getTheCase().pressPowerButton();
     }
 }

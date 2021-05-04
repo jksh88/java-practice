@@ -13,6 +13,11 @@ public class Case {
 
     public void pressPowerButton() {
         System.out.println("Power button pressed");
+        displayLogo();
+    }
+
+    private void displayLogo() {
+        System.out.println("Loading logo..");
     }
 
     public String getModel() {
