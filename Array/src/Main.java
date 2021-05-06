@@ -26,6 +26,6 @@ public class Main {
       for (int num: array) {
           sum += num;
       }
-      return sum / array.length;
+      return (double)sum / (double)array.length;
   }
 }
