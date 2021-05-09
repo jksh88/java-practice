@@ -110,6 +110,7 @@ public class Main {
             }
 
         }
+        quit = true;
     }
 
     public static void printMenu() {
