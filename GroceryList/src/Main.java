@@ -35,7 +35,11 @@ public class Main {
                 case 5:
                     findItem();
                     break;
+
                 case 6:
+                    processArrayList();
+                    break;
+                case 7:
                     quit = true;
                     break;
             }
@@ -80,5 +84,18 @@ public class Main {
         } else {
             System.out.println("Found " + searchItem + " in the list");
         }
+    }
+
+    public static void processArrayList() {
+        ArrayList<String> newArrayList = new ArrayList<String>();
+        newArrayList.addAll(groceryList.getGroceryList());
+
+        //Another way of doing the same thing as above. This next liine creates a brand new arraylist initialized to the content of the groceryList
+        ArrayList<String> nextArray = new ArrayList<String>(groceryList.getGroceryList());
+
+        //If for some reason I want to convert the arraylist to an array
+        String[] newArray = new String[groceryList.getGroceryList().size()];
+        newArray = groceryList.getGroceryList().toArray(newArray);
+        //https://stackoverflow.com/questions/9572795/convert-list-to-array-in-java
     }
 }
