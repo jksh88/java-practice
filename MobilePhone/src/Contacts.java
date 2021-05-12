@@ -14,12 +14,17 @@ public class Contacts {
         System.out.println(contacts.toString());
     }
 
-    public void getNumber(String name) {
+    public String getNumber(String name) {
+        String number = contacts.get(findIndex(name)).get(1);
+        return number;
+    }
 
+    public void modifyContact(String name, String newNumber) {
+        contacts.get(findIndex(name)).set(1, newNumber);
     }
 
     public void removeContact(String name) {
-
+        contacts.remove(findIndex(name));
     }
 
     public int findIndex(String name) {
