@@ -9,13 +9,13 @@ public class Main {
         while (!quit) {
             System.out.println("Enter your choice: ");
             choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     phone.printContacts();
                     break;
                 case 2:
                     System.out.println("Enter the name: ");
-                    scanner.nextLine();
                     String name = scanner.nextLine();
                     System.out.println("Enter the number: ");
                     String number = scanner.nextLine();
@@ -35,13 +35,13 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Enter the name to find: ");
-                    scanner.nextLine();
                     String nameToFind = scanner.nextLine();
                     phone.getContact(nameToFind);
                     break;
                 case 6:
                     System.out.println("Exiting");
                     quit = true;
+                    break;
             }
         }
     }
