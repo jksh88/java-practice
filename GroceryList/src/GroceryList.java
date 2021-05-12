@@ -4,7 +4,7 @@ public class GroceryList {
     private ArrayList<String> groceryList = new ArrayList<String>();
 
     public void addGrocery(String item) {
-        groceryList.add(item);
+         groceryList.add(item);
     }
 
     public ArrayList<String> getGroceryList() {
