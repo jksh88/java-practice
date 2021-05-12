@@ -58,7 +58,8 @@ public class Contacts {
         return -1;
     }
 }
-
+//https://www.geeksforgeeks.org/difference-equals-method-java/
+// equals: content comparison vs '==': address comparison
 
 
 
