@@ -8,18 +8,14 @@ import java.io.BufferedReader;
 public class Main {
     public static void main(String[] args) {
         try(ServerSocket serverSocket = new ServerSocket(5088)) {
-            Socket socket = serverSocket.accept();
-            System.out.println("Client connected!");
-            BufferedReader input = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
-            PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
 
             while(true) {
-                String echoString = input.readLine();
-                if (echoString.equals("exit")) {
-                    break;
-                }
-                output.println("Echo from server: " + echoString);
+//                Socket socket = serverSocket.accept();
+//                Echoer echoer = new Echoer(socket);
+//                echoer.start();
+
+                new Echoer(serverSocket.accept()).start();
+                //this way, kick off a new thread every time a new connection is accepted
             }
         } catch(IOException e) {
             System.out.println("Server exception " + e.getMessage());
