@@ -18,6 +18,7 @@ public class Student implements ISaveable {
         return name;
     }
 
+
     public int getScore() {
         return score;
     }
@@ -63,11 +64,11 @@ public class Student implements ISaveable {
         values.add(1, "" + score);
         values.add(2, "" + height);
         values.add(3, specialty);
-        return null;
+        return values;
     }
 
     @Override
-    public void read(ArrayList<String> valuesSaved) {
+    public void read(List<String> valuesSaved) {
         if(valuesSaved != null && valuesSaved.size() > 0) {
             this.name = valuesSaved.get(0);
             this.score = Integer.parseInt(valuesSaved.get(1));

@@ -3,18 +3,13 @@ import java.util.ArrayList;
 
 public class Main {
 
-
     public static void main(String[] args) {
-        Student jay = new Student("Jay", 78, 178, "product managenemt");
+        Student jay = new Student("Jay", 78, 178, "product management");
         System.out.println(jay.toString());
         saveObject(jay);
+        jay.setScore(88);
         loadObject(jay);
         System.out.println(jay);
-
-        jay.setScore(88);
-
-
-
     }
 
     public static ArrayList<String> readValues () {
@@ -36,6 +31,8 @@ public class Main {
                     System.out.println("Enter a string: ");
                     String input = scanner.nextLine();
                     values.add(index, input);
+                    index++;
+                    break;
             }
         }
         return values;
