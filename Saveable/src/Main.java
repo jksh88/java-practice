@@ -9,7 +9,10 @@ public class Main {
         saveObject(jay);
         jay.setScore(88);
         loadObject(jay);
+
         System.out.println(jay);
+//        saveObject();
+//        loadObject();
     }
 
     public static ArrayList<String> readValues () {

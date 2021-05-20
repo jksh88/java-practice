@@ -18,7 +18,6 @@ public class Student implements ISaveable {
         return name;
     }
 
-
     public int getScore() {
         return score;
     }
