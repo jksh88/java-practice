@@ -33,6 +33,19 @@ public class Gearbox {
             }
     }
 
+    public double wheelSpeed(int revs) {
+            if (clutchIn) {
+                System.out.println("Buxing");
+                return 0.0;
+            }
+            return revs * gears.get(currentGear).getRatio();
+    }
+
+    public void printGears() {
+
+        System.out.println(gears);
+    }
+
     private class Gear {
         private int gearNumber;
         private double ratio;
@@ -40,6 +53,10 @@ public class Gearbox {
         public Gear(int gearNumber, double ratio) {
             this.gearNumber = gearNumber;
             this.ratio = ratio;
+        }
+
+        public double getRatio(){
+          return ratio;
         }
 
     }
