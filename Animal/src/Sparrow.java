@@ -3,8 +3,6 @@ public class Sparrow extends Bird{
         super(name);
     }
 
-    public void fly() {
-        System.out.println("Flitting from branch to branch");
-    }
+
 
 }

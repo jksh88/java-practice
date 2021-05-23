@@ -3,6 +3,7 @@ public class Penguin extends Bird {
         super(name);
     }
     public void fly() {
+        super.fly();
         System.out.println("I can't fly");
     }
 }
