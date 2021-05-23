@@ -46,6 +46,8 @@ public class Gearbox {
         System.out.println(gears);
     }
 
+
+
     private class Gear {
         private int gearNumber;
         private double ratio;
