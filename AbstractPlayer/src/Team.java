@@ -31,17 +31,22 @@ public class Team<T extends Player> {
         return members.size();
     }
 
-    public void matchResult(Team opponent, int ourScore, int theirScore) {
+    public void matchResult(Team<T> opponent, int ourScore, int theirScore) {
+        String message;
         if(ourScore > theirScore) {
             won++;
+            message = " beat ";
         } else if(ourScore == theirScore) {
             draw++;
+            message = " drew with ";
         } else {
             loss++;
+            message = " lost to ";
         }
         played++;
         if(opponent != null) {
             opponent.matchResult(null, theirScore, ourScore);
+            System.out.println(this.getTeam() + message + opponent.getTeam() + '.' );
         }
     }
 
