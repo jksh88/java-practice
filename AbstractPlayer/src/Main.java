@@ -48,8 +48,18 @@ public class Main {
         mlb.addTeam(yankees);
         mlb.addTeam(pirates);
         mlb.addTeam(blueJays);
+        jLeague.addTeam(sereso);
+
+        angels.matchResult(dodgers, 4, 7);
+        angels.matchResult(pirates, 11, 5);
+        angels.matchResult(dodgers, 2, 7);
+        angels.matchResult(yankees, 6, 3);
+        dodgers.matchResult(rangers, 4, 7);
+        blueJays.matchResult(dodgers, 4, 7);
+        pirates.matchResult(rangers, 11, 0);
 
         mlb.printLeagueTable();
+
 
     }
 }
