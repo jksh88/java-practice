@@ -2,14 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class League<T extends Team> {
-    private String teamName;
+    private String leagueName;
     private ArrayList<T> league = new ArrayList<>();
-    public League(String team) {
-        this.teamName = team;
+    public League(String leagueName) {
+        this.leagueName = leagueName;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public String getLeagueName() {
+        return leagueName;
     }
 
     public boolean addTeam(T team) {
@@ -17,7 +17,7 @@ public class League<T extends Team> {
             System.out.println("team is already in leagueTable");
             return false;
         }
-        System.out.println("team " + getTeamName() + " added");
+        System.out.println("team " + team.getTeam() + " added");
         return true;
     }
 
