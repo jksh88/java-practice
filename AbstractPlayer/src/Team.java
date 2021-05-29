@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team<T extends Player> {
+public class Team<T extends Player> implements Comparable<Team<T>> {
     private String name;
     int played = 0;
     int won = 0;
@@ -19,10 +19,10 @@ public class Team<T extends Player> {
 
     public boolean addPlayer(T player){
         if (members.contains(player)) {
-            System.out.println(((Player) player).getName() + " already on team");
+            System.out.println(player.getName() + " already on team");
         } else {
             members.add(player);
-            System.out.println(((Player) player).getName() + " has been added to Team " + this.name);
+            System.out.println(player.getName() + " has been added to Team " + this.name);
         }
         return true;
     }
