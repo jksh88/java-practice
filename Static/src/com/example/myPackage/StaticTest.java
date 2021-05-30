@@ -9,8 +9,8 @@ public class StaticTest {
         numInstances++;
     }
 
-    public int getNumInstances() {
-        return this.numInstances;
+    public static int getNumInstances() {
+        return numInstances;
     }
 
     public String getName() {
