@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PackDem">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../PackDem/out/artifacts/PackDem_jar/PackDem.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
