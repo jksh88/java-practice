@@ -24,7 +24,7 @@ public class Theater {
     }
 
     public boolean reserveSeat(String seatNumber) {
-        Seat requestedSeat;
+        Seat requestedSeat = null;
         for (Seat seat : seats) {
             if (seat.getSeatNumber().equals(seatNumber)) {
                 requestedSeat = seat;
