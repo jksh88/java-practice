@@ -1,5 +1,8 @@
 public class AddEvenDigits {
     public static int addEvenDigits(int number) {
+        if (number < 0) {
+            return -1;
+        }
         String numStr = String.valueOf(number);
         int sum = 0;
         for(int i = numStr.length(); i >= 0; i--) {
