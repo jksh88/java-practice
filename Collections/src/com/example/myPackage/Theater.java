@@ -4,14 +4,16 @@ import java.util.*;
 
 public class Theater {
     private final String theaterName;
-    private Collection<Seat> seats = new ArrayList<>();
+    private List<Seat> seats = new ArrayList<>();
 
     public Theater(String theaterName, int numRows, int seatsPerRow) {
         this.theaterName = theaterName;
 
         int lastRow = 'A' + (numRows - 1);
+        System.out.println("lastRow: " + lastRow);
         for (char row = 'A'; row <= lastRow; row++) {
             for (int seatNum = 1; seatNum <= seatsPerRow; seatNum++) {
+                System.out.println("row: " + row + " seatNum: " + seatNum);
                 Seat seat = new Seat(row + String.format("%02d", seatNum));
                 seats.add(seat);
             }
@@ -25,24 +27,28 @@ public class Theater {
     public boolean reserveSeat(String seatNumber) {
         Seat requestedSeat = new Seat(seatNumber);
         int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
+        System.out.println("foundSeat: " + foundSeat);
         if(foundSeat >= 0) {
             return seats.get(foundSeat).reserve();
-        }
-
-
-        for (Seat seat : seats) {
-            System.out.print("*");
-            if (seat.getSeatNumber().equals(seatNumber)) {
-                requestedSeat = seat;
-                break;
-            }
-        }
-        if (requestedSeat == null) {
-            System.out.println("No seat " + seatNumber);
+        } else {
+            System.out.println("There's no seat " + seatNumber);
             return false;
         }
 
-        return requestedSeat.reserve();
+//
+//        for (Seat seat : seats) {
+//            System.out.print("*");
+//            if (seat.getSeatNumber().equals(seatNumber)) {
+//                requestedSeat = seat;
+//                break;
+//            }
+//        }
+//        if (requestedSeat == null) {
+//            System.out.println("No seat " + seatNumber);
+//            return false;
+//        }
+//
+//        return requestedSeat.reserve();
     }
 
     // for testing
