@@ -1,8 +1,9 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int x = getIntLBYL();
+        int x = getIntEAFP();
         System.out.println("x: " + x);
     }
 
@@ -26,5 +27,20 @@ public class Main {
             return Integer.parseInt(input);
         }
         return 0;
+    }
+
+    private static int getIntEAFP() {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
+        try {
+            String input = s.next();
+            return Integer.parseInt(input);
+        } catch(InputMismatchException e) {
+            return 0;
+        } catch(NumberFormatException e) {
+            return 0;
+        }
+
+
     }
 }
