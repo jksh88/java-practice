@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Theater {
     private final String theaterName;
-    private List<Seat> seats = new ArrayList<>();
+    public List<Seat> seats = new ArrayList<>();
 
     public Theater(String theaterName, int numRows, int seatsPerRow) {
         this.theaterName = theaterName;
@@ -25,30 +25,25 @@ public class Theater {
     }
 
     public boolean reserveSeat(String seatNumber) {
-        Seat requestedSeat = new Seat(seatNumber);
-        int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
-        System.out.println("foundSeat: " + foundSeat);
-        if(foundSeat >= 0) {
-            return seats.get(foundSeat).reserve();
-        } else {
-            System.out.println("There's no seat " + seatNumber);
-            return false;
-        }
+        int low = 0;
+        int high = seats.size() -1;
 
-//
-//        for (Seat seat : seats) {
-//            System.out.print("*");
-//            if (seat.getSeatNumber().equals(seatNumber)) {
-//                requestedSeat = seat;
-//                break;
-//            }
-//        }
-//        if (requestedSeat == null) {
-//            System.out.println("No seat " + seatNumber);
-//            return false;
-//        }
-//
-//        return requestedSeat.reserve();
+        while (low <= high) {
+            System.out.println("*");
+            int mid = (low + high)/2;
+            Seat midVal = seats.get(mid);
+            int cmp = midVal.getSeatNumber().compareTo(seatNumber);
+
+            if (cmp < 0) {
+                low = mid + 1;
+            } else if (cmp > 0) {
+                high = mid -1;
+            } else {
+                return seats.get(mid).reserve();
+            }
+        }
+        System.out.println("There is no seat " + seatNumber);
+        return false;
     }
 
     // for testing
@@ -58,7 +53,7 @@ public class Theater {
         }
     }
 
-    private class Seat implements Comparable<Seat> {
+    public class Seat implements Comparable<Seat> {
         private final String seatNumber;
         private boolean reserved = false;
 
