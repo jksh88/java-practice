@@ -31,11 +31,17 @@ public class Main {
 
         locations.get(6).addPath("S", 1);
 
+        Map<String, String> vocabulary = new HashMap<String, String>();
+        vocabulary.put("QUIT", "Q");
+        vocabulary.put("EAST", "E");
+        vocabulary.put("WEST", "W");
+        vocabulary.put("NORTH", "N");
+        vocabulary.put("SOUTH", "S");
 
         int loc = 1;
 
         while (true) {
-            System.out.println("first ln in whle. loc: " + loc + "  " + locations.get(loc).getDescription());
+            System.out.println(locations.get(loc).getDescription());
             if (loc == 0) {
                 break;
             }
@@ -47,11 +53,24 @@ public class Main {
             }
             System.out.println();
 
-            String direction = s.nextLine().toUpperCase();
-            System.out.println("DIRECTION: " + direction);
+            String input = s.nextLine().toUpperCase();
+            String[] splitInput = input.split(" ");
+            System.out.println(splitInput);
+            String direction = input;
+            for(String i: splitInput) {
+                if (vocabulary.containsKey(i)) {
+                    direction = vocabulary.get(i);
+                    break;
+                }
+//                if (i.equalsIgnoreCase("East")) {
+//                    direction = "E";
+//                    System.out.println("i: " + i);
+//                }
+            }
+            System.out.println("Input: " + input);
+            System.out.println("direction: " + direction);
 
             if (paths.containsKey(direction)) {
-                System.out.println("contained");
                 loc = paths.get(direction);
             } else {
                 System.out.println("You can't go in that direction");
@@ -62,3 +81,9 @@ public class Main {
 
     }
 }
+
+//In general, both equals() and “==” operator in Java are used to compare objects to check equality but here are some of the differences between the two:
+//
+//
+//The main difference between the .equals() method and == operator is that one is a method and the other is the operator.
+//We can use == operators for reference comparison (address comparison) and .equals() method for content comparison. In simple words, == checks if both objects point to the same memory location whereas .equals() evaluates to the comparison of values in the objects.

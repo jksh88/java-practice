@@ -16,6 +16,7 @@ public class Location {
     public void addPath(String direction, int location) {
         paths.put(direction, location);
     }
+
     public int getLocationId() {
         return locationId;
     }
