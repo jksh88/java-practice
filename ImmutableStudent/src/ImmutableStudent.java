@@ -1,4 +1,4 @@
-public class ImmutableStudent {
+public final class ImmutableStudent {
     private final int id;
     private final String name;
     private final Age age;
