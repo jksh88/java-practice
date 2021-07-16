@@ -21,7 +21,7 @@ public class Age {
     }
 
     public int getYear() {
-        return 2021 - year;
+        return year;
     }
 
     public void setYear(int year) {
