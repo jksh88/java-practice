@@ -10,30 +10,30 @@ import java.util.Set;
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 
-    public static void main(String[] args) {
-
-        FileWriter locFile = null;
-        try {
-            locFile = new FileWriter("locations.txt");
-            for (Location location : locations.values()) {
-                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
-            }
-            locFile.close();
-        } catch (IOException e) {
-            System.out.println("In catch block");
-            e.printStackTrace();
-        } finally {
-            System.out.println("In finally block");
-            try {
-                if (locFile != null) {
-                    System.out.println("Attempting to close locFile");
-                    locFile.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    public static void main(String[] args) throws IOException {
+        try(FileWriter locFile = new FileWriter("locations.txt")) {
+            for (Location location: locations.values()) {
+            locFile.write(location.getLocationID() + ", " + location.getDescription() + "\n");}
         }
 
+
+
+//        FileWriter locFile = null;
+//        try {
+//            locFile = new FileWriter("locations.txt");
+//            for (Location location : locations.values()) {
+//                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
+////                throw new IOException("test exception thrown while writing");
+//            }
+//        } finally {
+//            System.out.println("In finally block");
+//
+//            if (locFile != null) {
+//                System.out.println("Attempting to close locFile");
+//                locFile.close();
+//            }
+//
+//        }
     }
 
     static {
