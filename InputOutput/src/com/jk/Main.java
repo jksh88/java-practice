@@ -11,7 +11,6 @@ public class Main {
 
 	    Scanner scanner = new Scanner(System.in);
 
-
         Map<String, String> vocabulary = new HashMap<String, String>();
         vocabulary.put("QUIT", "Q");
         vocabulary.put("NORTH", "N");
