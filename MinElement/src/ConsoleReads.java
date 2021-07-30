@@ -10,6 +10,7 @@ public class ConsoleReads {
             System.out.println("Enter a number: ");
             Scanner input = new Scanner(System.in);
             int num = input.nextInt();
+            input.nextLine();
             currentCount++;
             System.out.println(currentCount);
             numbers.add(num);

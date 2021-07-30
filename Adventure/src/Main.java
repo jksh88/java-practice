@@ -16,20 +16,29 @@ public class Main {
         locations.put(5, new Location(5, "ny"));
         locations.put(6, new Location(6, "seattle"));
 
-        locations.get(1).addPath("E", 3);
+        Map<String, Integer> tempPath = new HashMap<>();
+        tempPath.put("W", 2);
+        
+        tempPath = new HashMap<String, Integer>();
+        tempPath.put("E", 3);
 
-        locations.get(2).addPath("N", 5);
+        tempPath = new HashMap<String, Integer>();
+        tempPath.put("N", 5);
 
-        locations.get(3).addPath("E", 5);
-        locations.get(3).addPath("W", 1);
-        locations.get(3).addPath("S", 4);
+        tempPath = new HashMap<String, Integer>();
+        tempPath.put("E", 5);
+        tempPath.put("W", 1);
+        tempPath.put("S", 4);
 
-        locations.get(4).addPath("N", 3);
+        tempPath = new HashMap<String, Integer>();
+        tempPath.put("N", 3);
 
-        locations.get(5).addPath("S", 2);
-        locations.get(5).addPath("W", 3);
+        tempPath = new HashMap<String, Integer>();
+        tempPath.put("S", 2);
+        tempPath.put("W", 3);
 
-        locations.get(6).addPath("S", 1);
+        tempPath = new HashMap<String, Integer>();
+        tempPath.put("S", 1);
 
         Map<String, String> vocabulary = new HashMap<String, String>();
         vocabulary.put("QUIT", "Q");

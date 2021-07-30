@@ -20,7 +20,7 @@ public class DigitCheck {
     }
 
     public static void main(String[] args) {
-        boolean result = hasSharedDigit(25, 65);
+        boolean result = hasSharedDigit(11, 5);
         System.out.println(result);
     }
 }

@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Map;
 
 public class Location {
@@ -6,15 +5,11 @@ public class Location {
     private final String description;
     private final Map<String, Integer> paths;
 
-    public Location(int locationId, String destination) {
+    public Location(int locationId, String destination, Map<String, Integer> paths) {
         this.locationId = locationId;
         this.description = destination;
-        this.paths = new HashMap<>();
+        this.paths = paths;
         this.paths.put("Q", 0);
-    }
-
-    public void addPath(String direction, int location) {
-        paths.put(direction, location);
     }
 
     public int getLocationId() {

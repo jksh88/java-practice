@@ -23,7 +23,7 @@ public class GreatestCommonDivisor {
     }
 
     public static void main(String[] args) {
-        int gcd = getGreatestCommonDivisor(90, 15);
+        int gcd = getGreatestCommonDivisor(-90, 15);
         System.out.println(gcd);
     }
 }
