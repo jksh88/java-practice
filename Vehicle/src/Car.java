@@ -12,11 +12,13 @@ public class Car extends Vehicle {
         return price;
     }
 
-    public boolean isGoodCar() {
-        return isGoodCar;
+    public void isGoodCar() {
+        System.out.println("Good car yes");
+        ;
     }
 
     public void setPrice(int price) {
         this.price = price;
     }
+
 }

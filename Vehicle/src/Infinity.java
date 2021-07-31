@@ -43,4 +43,14 @@ public class Infinity extends Car {
     public void setColor(String color) {
         this.color = color;
     }
+
+    @Override
+    public void isGoodCar() {
+        if (price >= 40000 && maxSpeed >= 130) {
+            super.isGoodCar();
+        } else {
+            System.out.println("Not a great car");
+        }
+        ;
+    }
 }
