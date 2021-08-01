@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class FirstWay {
-    public static int[] addElement(int len, int[] origArr, int num) {
+    private static int[] addElement(int len, int[] origArr, int num) {
         int[] newArr = new int[len + 1];
         for (int i = 0; i < len; i++) {
             newArr[i] = origArr[i];
