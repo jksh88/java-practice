@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class NonIterClass {
@@ -14,5 +15,7 @@ public class NonIterClass {
             System.out.println(myList.get(i));
             ;
         }
+        int[] testArr = new int[] {1,2,3};
+        System.out.println(Arrays.toString(testArr));
     }
 }
