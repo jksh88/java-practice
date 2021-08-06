@@ -11,9 +11,9 @@ public class Song {
         return title;
     }
 
-    public Double getDuration() {
-        return duration;
-    }
+//    public Double getDuration() {
+//        return duration;
+//    }
 
     //All classes inherit from java.lang.Object class
     @Override
