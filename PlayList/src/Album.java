@@ -11,9 +11,10 @@ public class Album {
     }
 
     public boolean addToAlbum(String title, double duration) {
-        if (findSong(title) != null) {
+        if (findSong(title) == null) {
             Song song = new Song(title, duration);
             songs.add(song);
+            System.out.println(title + " added to album");
             return true;
         }
         return false;
@@ -28,15 +29,16 @@ public class Album {
         return null;
     }
 
-    private LinkedList<Song> playList = new LinkedList<Song>();
+//    private LinkedList<Song> playList = new LinkedList<Song>();
+//
+//    public LinkedList<Song> getPlayList() {
+//        return playList;
+//    }
 
-    public LinkedList<Song> getPlayList() {
-        return playList;
-    }
-
-    public boolean addToPlayList(String title) {
+    public boolean addToPlayList(String title, LinkedList<Song> playList) {
         if (findSong(title) != null) {
         playList.add(findSong(title));
+            System.out.println(title + " added to playlist");
             return true;
         }
         return false;
