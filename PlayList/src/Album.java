@@ -10,7 +10,7 @@ public class Album {
         this.songs = new ArrayList<Song>();
     }
 
-    public boolean addToAlbum(String title, Double duration) {
+    public boolean addToAlbum(String title, double duration) {
         if (findSong(title) != null) {
             Song song = new Song(title, duration);
             songs.add(song);
