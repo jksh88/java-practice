@@ -17,5 +17,20 @@ public class Main {
                 System.out.println(movie.getYear() + " " + movie.getRating() + " " + movie.getName());
             }
 
+        System.out.println("\n");
+        System.out.println("Sorted by name");
+        NameCompare nameCompare = new NameCompare();
+        Collections.sort(movieList, nameCompare);
+            for (MovieUsingComparator movie : movieList) {
+                System.out.println(movie.getYear() + " " + movie.getRating() + " " + movie.getName());
+            }
+
+        System.out.println("\n");
+        System.out.println("Sorted by year");
+        YearCompare yearCompare = new YearCompare();
+        Collections.sort(movieList, yearCompare);
+            for (MovieUsingComparator movie : movieList) {
+                System.out.println(movie.getYear() + " " + movie.getRating() + " " + movie.getName());
+            }
     }
 }
