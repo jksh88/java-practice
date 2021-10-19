@@ -12,3 +12,4 @@ public class StreamFile {
         words.close();
     }
 }
+

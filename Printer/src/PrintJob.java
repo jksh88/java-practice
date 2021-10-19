@@ -1,19 +1,19 @@
-public class PrintJob {
+public class PrintJob extends Printer {
     private int jobId = 1;
     private int pagesPrinted;
     private int paperUsed;
     private boolean isDoubleSided;
 
-    public PrintJob(int jobId, int pagesPrinted, int paperUsed, boolean isDoubleSided) {
+    public PrintJob(int tonerLevel, int papersGiven, int jobId, int pagesPrinted, boolean isDoubleSided) {
+        super(tonerLevel, papersGiven);
         this.jobId = jobId;
         this.pagesPrinted = pagesPrinted;
-        this.paperUsed = paperUsed;
         this.isDoubleSided = isDoubleSided;
     }
 
     public int getPaperUsed() {
         if (this.isDoubleSided) {
-            this.paperUsed = pagesPrinted % 2 == 0 ? pagesPrinted / 2 : pagesPrinted /2 + 1;
+            paperUsed = pagesPrinted % 2 == 0 ? pagesPrinted / 2 : pagesPrinted /2 + 1;
         }
         return paperUsed;
     }
@@ -25,4 +25,13 @@ public class PrintJob {
     public void setPagesPrinted(int howManyPages) {
         this.pagesPrinted = howManyPages;
     }
+
+    public int addToner(int tonerAmount) {
+        return super.addToner(tonerAmount);
+    }
+
+//    @Override
+//    public int getTonerLevel() {
+//
+//    }
 }

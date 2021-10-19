@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        Printer hp = new Printer(72);
+        Printer job1 = new PrintJob(72, 10, 1, 11, true);
     }
 }

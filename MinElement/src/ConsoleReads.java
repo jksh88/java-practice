@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class ConsoleReads {
     public ArrayList<Integer> numbers = new ArrayList<>();
-
     public ArrayList<Integer> readIntegers(int count) {
+
         int currentCount = 0;
         while (currentCount < count) {
             System.out.println("Enter a number: ");
